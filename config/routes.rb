@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  resources :comments
+
+  resources :users
+
+  resources :articles
+  #get '/new_article' => 'articles#new', as:'new_article'
+  # exact string path => 'Controler#Action', new_article_path created and named, for link_to helper for example
+  
+  root to: "articles#index"
+  # rooting method + creation of root_path
+  get '/new_article' => redirect('/articles')
+  get '/google' => redirect('http://www.google.com/')
+  get 'local_tweets/:zipcode' => 'tweets#index', as: 'local_tweets'
+  get 'articles/:username' => 'articles#index', as: 'user_own_article'
+  # defined params which is waited ==> definition needed in the index controller
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

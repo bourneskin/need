@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= @article.image.url %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Preview:</strong>
+  <%= @article.preview %>
+</p>
+
+<p>
+  <strong>Corpse:</strong>
+  <%= @article.corpse %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
